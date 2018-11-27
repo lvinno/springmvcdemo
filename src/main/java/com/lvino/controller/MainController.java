@@ -46,7 +46,7 @@ public class MainController {
         return "redirect:/admin/users";
     }
 
-    @RequestMapping(value = "admin/users/show{id}", method = RequestMethod.POST)
+    @RequestMapping(value = "admin/users/show/{id}", method = RequestMethod.GET)
     public String showUser(@PathVariable("id") Integer userId , ModelMap modelMap){
         UserEntity userEntity = userRepository.findOne(userId);
         modelMap.addAttribute("user", userEntity);
